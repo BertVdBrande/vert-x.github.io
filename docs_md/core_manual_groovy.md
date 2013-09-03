@@ -392,7 +392,7 @@ That message will then be delivered to all handlers registered against the addre
 
 Sending a message will result in only one handler registered at the address receiving the message. This is the point to point messaging pattern. The handler is chosen in a non strict round-robin fashion.
 
-    eb.publish("test.address", "hello world")
+    eb.send("test.address", "hello world")
 
 ### Replying to messages
 
@@ -504,13 +504,7 @@ And then, in a different verticle:
     def set = vertx.sharedData.getMap('demo.myset')
 
     // etc
-
-# Buffers
-
-Most data in vert.x is shuffled around using instances of `org.vertx.groovy.core.buffer.Buffer`.
-
-A Buffer represents a sequence of zero or more bytes that can be written to or read from, and which expands automatically as necessary to accomodate any bytes written to it. You can perhaps think of a buffer as smart byte array.
-        
+      
 # Buffers
 
 Most data in vert.x is shuffled around using instances of `org.vertx.groovy.core.buffer.Buffer`.
